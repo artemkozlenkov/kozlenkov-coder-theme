@@ -3,15 +3,19 @@
     <header>
       <h1 class="title">
         <a class="title-link" href="{{ .Permalink | safeURL }}">
-          {{ .Title }}
+          {{ if ne .Title "Contact" }}
+<!--             {{ .Content }}-->
+          {{ end }}
         </a>
       </h1>
     </header>
-    <section>
-      {{ .Params.Custom }}
-    </section>
 
-    {{ .Content }}
+    {{ if eq .Title "Contact" }}
+    {{ partial "contactForm.html" . }}
+    {{ end }}
 
+    {{ if ne .Title "Contact" }}
+      {{ .Content }}
+    {{ end }}
   </article>
 </section>
