@@ -91,6 +91,10 @@
         integrity="sha384-wyB/MspSJ/r2bT2kCj44qtsYRYlpzO2oAPhRj5myrWD63dt6qWv4x8AZe7Fl3K3b" crossorigin="anonymous"></script>
     {{ end }}
 
+    {{ if .Site.Params.googleTagManager }}
+      {{- partial "analytics/googletagmanager" . -}}
+    {{ end }}
+
     {{ hugo.Generator }}
   </head>
 
@@ -148,9 +152,6 @@
       {{- partial "analytics/matomo" . -}}
     {{ end }}
 
-    {{ if and .Site.Params.googleTagManager }}
-      {{- partial "analytics/googletagmanager" . -}}
-    {{ end }}
   </body>
 
 </html>
