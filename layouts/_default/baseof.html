@@ -91,8 +91,6 @@
         integrity="sha384-wyB/MspSJ/r2bT2kCj44qtsYRYlpzO2oAPhRj5myrWD63dt6qWv4x8AZe7Fl3K3b" crossorigin="anonymous"></script>
     {{ end }}
 
-    {{ template "_internal/google_analytics.html" . }}
-    
     {{ hugo.Generator }}
   </head>
 
@@ -128,7 +126,7 @@
       <script src="{{ . | relURL }}"></script>
     {{ end }}
 
-  
+    {{ template "_internal/google_analytics.html" . }}
 
     {{ if and .Site.Params.fathomAnalytics .Site.Params.fathomAnalytics.siteID }}
       {{- partial "analytics/fathom" . -}}
