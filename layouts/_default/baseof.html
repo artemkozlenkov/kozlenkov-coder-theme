@@ -148,7 +148,7 @@
       {{- partial "analytics/matomo" . -}}
     {{ end }}
 
-    {{ if and .Site.Params.googleTagManager .Site.Params.googleTagManager.id }}
+    {{ if and .Site.Params.googleTagManager }}
       {{- partial "analytics/googletagmanager" . -}}
     {{ end }}
   </body>
