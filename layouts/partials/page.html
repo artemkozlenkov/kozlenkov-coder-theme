@@ -10,7 +10,7 @@
       </h1>
     </header>
 
-    {{ with .Site.GetPage "/contact" }}
+    {{ if or (eq .Title "contact.de") (eq .Title "contact.ua") (eq .Title "contact")  }}
     {{ partial "contactForm.html" . }}
     {{ end }}
 
